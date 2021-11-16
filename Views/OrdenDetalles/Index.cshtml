@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Grupo7_Market.Models.OrdenDetalle>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Orden.OrdenId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.producto.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Precio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cantidad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descuento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Total)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Orden.OrdenId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.producto.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Precio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cantidad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descuento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Total)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.DetalleId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.DetalleId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.DetalleId })
+        </td>
+    </tr>
+}
+
+</table>
