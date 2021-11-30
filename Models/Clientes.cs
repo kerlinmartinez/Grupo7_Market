@@ -8,7 +8,7 @@ namespace Grupo7_Market.Models
 {
     public class Clientes
     {
-        
+        //Comentario de prueba
        [Key]
         public int ClienteId { get; set; }
 
